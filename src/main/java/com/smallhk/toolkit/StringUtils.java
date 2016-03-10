@@ -22,4 +22,8 @@ public class StringUtils {
 	public static boolean hasLength(CharSequence str) {
 		return (str != null && str.length() > 0);
 	}
+	
+	public static boolean hasLength(String str) {
+		return hasLength((CharSequence) str);
+	}
 }
