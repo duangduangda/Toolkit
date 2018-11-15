@@ -196,9 +196,11 @@ public class HttpClientProxy {
      */
     public static String sendPost(String url, Map<String, String> map, int timeout) {
         List<NameValuePair> formparams = new ArrayList<>(10);
+	if(null != map){
         for (Map.Entry<String, String> entry : map.entrySet()) {
             formparams.add(new BasicNameValuePair(entry.getKey(), entry.getValue()));
         }
+	}
         UrlEncodedFormEntity urlEncodedFormEntity = new UrlEncodedFormEntity(formparams, Consts.UTF_8);
         HttpPost httppost = new HttpPost(url);
         httppost.setEntity(urlEncodedFormEntity);
@@ -309,7 +311,6 @@ public class HttpClientProxy {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            HttpClientUtils.closeQuietly(httpclient);
             HttpClientUtils.closeQuietly(response);
         }
         return result;
