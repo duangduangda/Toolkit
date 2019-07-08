@@ -1,4 +1,4 @@
-package cn.creditease.fso.kratos.utils;
+package org.dean.toolkit;
 
 import org.apache.http.*;
 import org.apache.http.client.ClientProtocolException;
