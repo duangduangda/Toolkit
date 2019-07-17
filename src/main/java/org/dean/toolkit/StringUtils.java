@@ -6,7 +6,9 @@ package org.dean.toolkit;
  * @author duangduangda
  */
 public class StringUtils {
-	
+
+	public static final String EMPTY = "";
+
 	public static boolean hasText(String str){
 		return hasText((CharSequence)str);
 	}
